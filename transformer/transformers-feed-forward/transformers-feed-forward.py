@@ -5,6 +5,4 @@ def feed_forward(x: np.ndarray, W1: np.ndarray, b1: np.ndarray,
     """
     Apply position-wise feed-forward network.
     """
-    x_ = np.maximum(0, np.dot(x,W1) + b1)
-    return np.dot(x_,W2) + b2
-    
+    return np.dot(np.maximum(0,np.dot(x,W1)+b1),W2)+b2
